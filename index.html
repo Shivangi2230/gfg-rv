@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Escape Room Portfolio</title>
+
+    <link rel="stylesheet" href="style.css">
+
+</head>
+
+<body>
+
+    <!-- ================= START SCREEN ================= -->
+
+    <div id="startScreen">
+
+        <h1>🎮 Escape Room</h1>
+
+        <h2>Inside Shivangi's World</h2>
+
+        <p>
+            Welcome to my interactive gaming portfolio.
+            Explore every object inside the room to discover my skills,
+            hobbies, projects, and future goals.
+            Unlock the exit door after exploring everything!
+        </p>
+
+        <button id="startBtn">Start Game</button>
+
+    </div>
+
+    <!-- ================= GAME SCREEN ================= -->
+
+    <div id="gameScreen" class="hidden">
+
+        <!-- TOP BAR -->
+
+        <div id="topBar">
+
+            <h2>🎮 Escape Room Portfolio</h2>
+
+            <div id="progressContainer">
+
+                <span>Progress</span>
+
+                <div id="progressBar">
+
+                    <div id="progress"></div>
+
+                </div>
+
+                <p id="progressText">0 / 4 Objects Found</p>
+
+            </div>
+
+        </div>
+
+        <!-- ROOM -->
+
+        <div id="room">
+
+            <!-- BOOKS -->
+
+            <div class="item" id="books">
+
+                📚
+
+                <span>Books</span>
+
+            </div>
+
+            <!-- LAPTOP -->
+
+            <div class="item" id="laptop">
+
+                💻
+
+                <span>Laptop</span>
+
+            </div>
+
+            <!-- PHONE -->
+
+            <div class="item" id="phone">
+
+                📱
+
+                <span>Phone</span>
+
+            </div>
+
+            <!-- WINDOW -->
+
+            <div class="item" id="window">
+
+                🪟
+
+                <span>Future</span>
+
+            </div>
+
+            <!-- DOOR -->
+
+            <div class="item locked" id="door">
+
+                🚪
+
+                <span>Exit</span>
+
+            </div>
+
+        </div>
+
+    </div>
+
+    <!-- ================= POPUP ================= -->
+
+    <div id="popup" class="hidden">
+
+        <div class="popup-box">
+
+            <span id="close">&times;</span>
+
+            <h2 id="popupTitle"></h2>
+
+            <p id="popupText"></p>
+
+        </div>
+
+    </div>
+
+    <!-- ================= JAVASCRIPT ================= -->
+
+    <script src="script.js"></script>
+
+</body>
+
+</html>
