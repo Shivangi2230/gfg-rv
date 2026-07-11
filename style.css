@@ -1,0 +1,360 @@
+import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&family=Poppins:wght@300;400;500;600&display=swap');
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+    font-family:'Poppins',sans-serif;
+    background:linear-gradient(135deg,#08111f,#14213d);
+    color:white;
+    overflow:hidden;
+}
+
+.hidden{
+    display:none !important;
+}
+
+/* ================= START SCREEN ================= */
+
+#startScreen{
+    width:100%;
+    height:100vh;
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+    text-align:center;
+    padding:30px;
+    background:radial-gradient(circle at top,#203864,#08111f);
+}
+
+#startScreen h1{
+    font-family:'Press Start 2P',cursive;
+    color:#43d9ff;
+    font-size:42px;
+    text-shadow:0 0 15px cyan;
+    margin-bottom:25px;
+}
+
+#startScreen h2{
+    font-size:32px;
+    margin-bottom:20px;
+}
+
+#startScreen p{
+    max-width:700px;
+    line-height:1.8;
+    color:#d7d7d7;
+}
+
+#startBtn{
+    margin-top:35px;
+    padding:16px 40px;
+    border:none;
+    border-radius:40px;
+    background:#43d9ff;
+    color:#000;
+    font-size:18px;
+    font-weight:bold;
+    cursor:pointer;
+    transition:.3s;
+}
+
+#startBtn:hover{
+    transform:scale(1.08);
+    box-shadow:0 0 20px cyan;
+}
+
+/* ================= GAME SCREEN ================= */
+
+#gameScreen{
+    width:100%;
+    height:100vh;
+}
+
+/* ================= TOP BAR ================= */
+
+#topBar{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:20px;
+    background:#09111e;
+}
+
+#progressContainer{
+    text-align:center;
+}
+
+#progressBar{
+    width:300px;
+    height:18px;
+    background:#555;
+    border-radius:20px;
+    overflow:hidden;
+    margin-top:10px;
+}
+
+#progress{
+    width:0%;
+    height:100%;
+    background:limegreen;
+    transition:.4s;
+}
+
+#progressText{
+    margin-top:8px;
+    font-size:14px;
+}
+
+/* ================= ROOM ================= */
+
+#room{
+    width:90%;
+    height:78vh;
+    margin:20px auto;
+    position:relative;
+    border:6px solid white;
+    border-radius:20px;
+    background:linear-gradient(#34495e,#1f2937);
+    overflow:hidden;
+    box-shadow:0 0 20px rgba(0,255,255,.3);
+}
+
+#room::after{
+    content:"";
+    position:absolute;
+    left:0;
+    bottom:0;
+    width:100%;
+    height:20%;
+    background:#6d4c41;
+}
+
+/* ================= ITEMS ================= */
+
+.item{
+    width:120px;
+    height:120px;
+    position:absolute;
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+    background:rgba(255,255,255,.15);
+    border:2px solid rgba(255,255,255,.4);
+    border-radius:18px;
+    backdrop-filter:blur(5px);
+    cursor:pointer;
+    font-size:48px;
+    transition:.3s;
+    animation:float 3s ease-in-out infinite;
+}
+
+.item:hover{
+    transform:scale(1.08);
+    box-shadow:0 0 20px cyan;
+}
+
+.item span{
+    margin-top:10px;
+    font-size:14px;
+    font-weight:600;
+}
+
+/* ================= POSITIONS ================= */
+
+#books{
+    top:60px;
+    left:60px;
+}
+
+#laptop{
+    top:80px;
+    right:80px;
+}
+
+#phone{
+    bottom:80px;
+    left:120px;
+}
+
+#window{
+    bottom:90px;
+    right:170px;
+}
+
+#door{
+    left:50%;
+    bottom:20px;
+    transform:translateX(-50%);
+}
+
+.locked{
+    background:#7f1d1d;
+    border-color:#ef4444;
+}
+
+.locked:hover{
+    box-shadow:0 0 20px red;
+}
+
+/* ================= FLOAT ================= */
+
+@keyframes float{
+
+    0%{
+        transform:translateY(0);
+    }
+
+    50%{
+        transform:translateY(-8px);
+    }
+
+    100%{
+        transform:translateY(0);
+    }
+
+}
+
+/* ================= POPUP ================= */
+
+#popup{
+    position:fixed;
+    top:0;
+    left:0;
+    width:100%;
+    height:100%;
+    background:rgba(0,0,0,.75);
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    z-index:1000;
+}
+
+#popup.hidden{
+    display:none !important;
+}
+
+.popup-box{
+    width:90%;
+    max-width:500px;
+    background:white;
+    color:#222;
+    padding:30px;
+    border-radius:20px;
+    text-align:center;
+    position:relative;
+    animation:popupShow .3s ease;
+}
+
+.popup-box h2{
+    margin-bottom:15px;
+    color:#1e3a8a;
+}
+
+.popup-box p{
+    line-height:1.7;
+}
+
+#close{
+    position:absolute;
+    top:10px;
+    right:18px;
+    font-size:30px;
+    font-weight:bold;
+    cursor:pointer;
+}
+
+#close:hover{
+    color:red;
+}
+
+@keyframes popupShow{
+
+    from{
+        transform:scale(.7);
+        opacity:0;
+    }
+
+    to{
+        transform:scale(1);
+        opacity:1;
+    }
+
+}
+
+/* ================= MOBILE ================= */
+
+@media(max-width:768px){
+
+body{
+    overflow:auto;
+}
+
+#topBar{
+    flex-direction:column;
+    gap:15px;
+}
+
+#progressBar{
+    width:220px;
+}
+
+#room{
+    width:96%;
+    height:82vh;
+}
+
+.item{
+    width:80px;
+    height:80px;
+    font-size:34px;
+}
+
+.item span{
+    font-size:10px;
+}
+
+#books{
+    left:15px;
+    top:20px;
+}
+
+#laptop{
+    right:15px;
+    top:30px;
+}
+
+#phone{
+    left:30px;
+    bottom:70px;
+}
+
+#window{
+    right:30px;
+    bottom:70px;
+}
+
+#door{
+    bottom:15px;
+}
+
+#startScreen h1{
+    font-size:22px;
+    line-height:1.6;
+}
+
+#startScreen h2{
+    font-size:22px;
+}
+
+#startScreen p{
+    width:95%;
+    font-size:15px;
+}
+
+}
