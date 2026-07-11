@@ -1,0 +1,510 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&family=Poppins:wght@300;400;500;600&display=swap');
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+    font-family:'Poppins',sans-serif;
+    background:linear-gradient(135deg,#08111f,#14213d);
+    color:white;
+    overflow:hidden;
+}
+
+
+
+.hidden{
+    display:none !important;
+}
+
+
+
+#startScreen{
+    width:100%;
+    height:100vh;
+
+    display:flex;
+    flex-direction:column;
+
+    justify-content:center;
+    align-items:center;
+
+    text-align:center;
+
+    padding:30px;
+
+    background:
+    radial-gradient(circle at top,#203864,#08111f);
+}
+
+#startScreen h1{
+
+    font-family:'Press Start 2P',cursive;
+
+    color:#43d9ff;
+
+    font-size:42px;
+
+    margin-bottom:25px;
+
+    text-shadow:0 0 15px cyan;
+
+}
+
+#startScreen h2{
+
+    margin-bottom:25px;
+
+    font-size:34px;
+
+}
+
+#startScreen p{
+
+    max-width:750px;
+
+    line-height:1.8;
+
+    color:#d9d9d9;
+
+}
+
+#startBtn{
+
+    margin-top:35px;
+
+    padding:18px 45px;
+
+    border:none;
+
+    border-radius:40px;
+
+    background:#43d9ff;
+
+    color:black;
+
+    cursor:pointer;
+
+    font-size:18px;
+
+    font-weight:bold;
+
+    transition:.3s;
+}
+
+#startBtn:hover{
+
+    transform:scale(1.08);
+
+    box-shadow:0 0 20px cyan;
+
+}
+
+
+
+#gameArea{
+
+    width:100%;
+
+    height:100vh;
+
+    background:#101c33;
+
+}
+
+
+
+#progressBox{
+
+    background:#09111e;
+
+    text-align:center;
+
+    padding:18px;
+
+    font-size:18px;
+
+}
+
+#progressBar{
+
+    width:320px;
+
+    height:18px;
+
+    background:#555;
+
+    margin:15px auto;
+
+    border-radius:20px;
+
+    overflow:hidden;
+
+}
+
+#progress{
+
+    width:0%;
+
+    height:100%;
+
+    background:limegreen;
+
+    transition:.5s;
+
+}
+
+#progressText{
+
+    font-size:15px;
+
+    color:#ddd;
+
+}
+
+
+#room{
+
+    width:90%;
+
+    height:78vh;
+
+    margin:20px auto;
+
+    position:relative;
+
+    border:6px solid #ffffff;
+
+    border-radius:20px;
+
+    background:linear-gradient(#394867,#212A3E);
+
+    overflow:hidden;
+
+    box-shadow:0 0 25px rgba(0,255,255,.25);
+
+}
+
+
+
+#room::after{
+
+    content:"";
+
+    position:absolute;
+
+    left:0;
+
+    bottom:0;
+
+    width:100%;
+
+    height:22%;
+
+    background:#5b4636;
+
+}
+
+
+
+.object{
+
+    position:absolute;
+
+    width:120px;
+
+    height:120px;
+
+    border-radius:18px;
+
+    background:rgba(255,255,255,.15);
+
+    border:2px solid rgba(255,255,255,.4);
+
+    display:flex;
+
+    flex-direction:column;
+
+    justify-content:center;
+
+    align-items:center;
+
+    cursor:pointer;
+
+    transition:.3s;
+
+    user-select:none;
+
+    backdrop-filter:blur(5px);
+
+}
+
+.object:hover{
+
+    transform:scale(1.08);
+
+    box-shadow:0 0 20px cyan;
+
+}
+
+.object p{
+
+    margin-top:10px;
+
+    font-size:14px;
+
+    font-weight:600;
+
+}
+
+
+
+#books{
+
+    top:60px;
+
+    left:60px;
+
+}
+
+#laptop{
+
+    top:80px;
+
+    right:90px;
+
+}
+
+#phone{
+
+    left:130px;
+
+    bottom:70px;
+
+}
+
+#window{
+
+    right:180px;
+
+    bottom:90px
+    
+
+#popup{
+
+    position:fixed;
+
+    top:0;
+
+    left:0;
+
+    width:100%;
+
+    height:100%;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    background:rgba(0,0,0,.75);
+
+    z-index:1000;
+
+}
+
+#popup.hidden{
+
+    display:none !important;
+
+}
+
+.popupContent{
+
+    width:90%;
+
+    max-width:550px;
+
+    background:#ffffff;
+
+    color:#222;
+
+    padding:30px;
+
+    border-radius:20px;
+
+    text-align:center;
+
+    position:relative;
+
+    animation:popupAnimation .35s ease;
+
+    box-shadow:0 0 30px rgba(0,255,255,.35);
+
+}
+
+.popupContent h2{
+
+    margin-bottom:18px;
+
+    color:#0f172a;
+
+}
+
+.popupContent p{
+
+    line-height:1.8;
+
+    font-size:16px;
+
+}
+
+#closePopup{
+
+    position:absolute;
+
+    top:12px;
+
+    right:18px;
+
+    font-size:30px;
+
+    font-weight:bold;
+
+    cursor:pointer;
+
+    color:#333;
+
+    transition:.3s;
+
+}
+
+#closePopup:hover{
+
+    color:red;
+
+}
+
+@keyframes popupAnimation{
+
+    from{
+
+        transform:scale(.75);
+
+        opacity:0;
+
+    }
+
+    to{
+
+        transform:scale(1);
+
+        opacity:1;
+
+    }
+
+}
+
+
+
+@media (max-width:768px){
+
+    body{
+
+        overflow:auto;
+
+    }
+
+    #startScreen h1{
+
+        font-size:22px;
+
+        line-height:1.6;
+
+    }
+
+    #startScreen h2{
+
+        font-size:22px;
+
+    }
+
+    #startScreen p{
+
+        width:95%;
+
+        font-size:15px;
+
+    }
+
+    #progressBar{
+
+        width:220px;
+
+    }
+
+    #room{
+
+        width:96%;
+
+        height:82vh;
+
+    }
+
+    .object{
+
+        width:80px;
+
+        height:80px;
+
+        font-size:30px;
+
+    }
+
+    .object p{
+
+        font-size:10px;
+
+        text-align:center;
+
+    }
+
+    #books{
+
+        left:15px;
+
+        top:30px;
+
+    }
+
+    #laptop{
+
+        right:15px;
+
+        top:40px;
+
+    }
+
+    #phone{
+
+        left:40px;
+
+        bottom:70px;
+
+    }
+
+    #window{
+
+        right:40px;
+
+        bottom:80px;
+
+    }
+
+}
+
+

@@ -1,0 +1,76 @@
+    <!DOCTYPE html>
+<html>
+<head>
+    <title>Escape Room</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <div id="startScreen">
+
+        <h1>🔐 Escape Room</h1>
+
+        <p>
+            Solve the puzzle and escape the room!
+        </p>
+
+        <button id="startBtn">
+            Start Game
+        </button>
+
+    </div>
+
+
+
+    <div id="gameArea" style="display:none;">
+
+        <h2>Mission: Find the Password</h2>
+
+        <p id="timer">
+            Time Left: 60 seconds
+        </p>
+
+
+        <h3>Room 1: The Hidden Code</h3>
+
+        <p>
+            A mysterious note says:
+            <br>
+            "The answer to life, universe and everything."
+        </p>
+
+
+        <button id="clueBtn">
+            Show Clue
+        </button>
+
+
+        <p id="clueBox"></p>
+
+
+
+        <input 
+            type="text" 
+            id="answer" 
+            placeholder="Enter password"
+        >
+
+
+        <button id="submitBtn">
+            Submit Answer
+        </button>
+
+
+        <h3 id="result"></h3>
+
+
+    </div>
+
+
+
+    <script src="script.js"></script>
+
+</body>
+</html>
